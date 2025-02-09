@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 antialiased bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200;
+  }
+}
+
+/* Editor Styles */
+.ProseMirror {
+  @apply min-h-[500px] outline-none;
+}
+
+.ProseMirror > * + * {
+  @apply mt-4;
+}
+
+.ProseMirror h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.ProseMirror h2 {
+  @apply text-2xl font-bold mb-3;
+}
+
+.ProseMirror h3 {
+  @apply text-xl font-bold mb-2;
+}
+
+.ProseMirror p {
+  @apply text-base leading-relaxed mb-4;
+}
+
+.ProseMirror ul {
+  @apply list-disc pl-6 mb-4 space-y-2;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-6 mb-4 space-y-2;
+}
+
+.ProseMirror li {
+  @apply mb-1;
+}
+
+.ProseMirror li > p {
+  @apply mb-0;
+}
+
+.ProseMirror img {
+  @apply max-w-full h-auto rounded-lg my-4;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.ProseMirror img.align-left {
+  @apply ml-0 mr-auto;
+}
+
+.ProseMirror img.align-center {
+  @apply mx-auto;
+}
+
+.ProseMirror img.align-right {
+  @apply ml-auto mr-0;
+}
+
+.ProseMirror hr.slide-divider {
+  @apply my-8 border-t-2 border-dashed border-gray-300;
+  page-break-after: always;
+}
+
+/* Slide Styles */
+.slide {
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  page-break-after: always;
+  box-sizing: border-box;
+  position: relative;
+  transform-origin: top center;
+  transform: scale(0.7);
+}
+
+.slide h1 {
+  @apply text-3xl font-bold mb-6;
+}
+
+.slide h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.slide h3 {
+  @apply text-xl font-bold mb-3;
+}
+
+.slide p {
+  @apply text-base leading-relaxed mb-4;
+}
+
+.slide ul {
+  @apply list-disc pl-6 mb-4 space-y-2;
+}
+
+.slide ol {
+  @apply list-decimal pl-6 mb-4 space-y-2;
+}
+
+.slide li {
+  @apply mb-2;
+}
+
+.slide li > p {
+  @apply mb-0;
+}
+
+/* Slide container styles */
+.h-full.flex.items-center.justify-center.p-8 {
+  min-height: 100vh;
+  padding-top: 2rem;
+  align-items: flex-start;
+}
+
+/* Image alignment classes */
+.slide img.align-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.slide img.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slide img.align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Print styles */
+@media print {
+  .toolbar {
+    display: none !important;
+  }
+
+  .slide {
+    transform: none;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  hr.slide-divider {
+    page-break-after: always;
+  }
+}
